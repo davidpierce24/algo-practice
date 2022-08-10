@@ -39,3 +39,31 @@
 //     return ((((n*2)-1)*n)-(n-1))
 // }
 
+// 6 makeArrayConsecutive2
+// function solution(statues) {
+//     let big = statues[0]
+//     let small = statues[0]
+//     for(let i in statues){
+//         if(statues[i] < small){
+//             small = statues[i]
+//         } else if (statues[i] > big){
+//             big = statues[i]
+//         }
+//     }
+//     return (big-small - (statues.length-1))
+// }
+
+// 7 almostIncreasingSequence
+// function solution(sequence) {
+//     let count = 0
+//     for(let i = 0; i < sequence.length-1; i++){
+//         if(sequence[i+1] <= sequence[i]){
+//             count ++
+//         }
+//         if(sequence[i] <= sequence[i-2] && sequence[i+1] <= sequence[i-1]) {
+//             return false;
+//         }
+//     }
+//     console.log(count)
+//     return count <= 1
+// }

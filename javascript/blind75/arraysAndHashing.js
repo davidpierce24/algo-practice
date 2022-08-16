@@ -39,3 +39,18 @@
         }
         return true
     };
+
+// Two Sum
+    var twoSum = function(nums, target) {
+        var obj = {}
+        for (var i in nums){
+            if(obj[target - nums[i]] != undefined){
+                return [obj[target-nums[i]], i]
+            }
+            else{
+                obj[nums[i]] = i
+            }
+        }
+        return []
+    };
+

@@ -16,14 +16,23 @@
         if(s.length != t.length){
             return false
         }
-        var present  = 0
-        for(var i = t.length-1; i>= 0; i--){
-            for(var j of s){
-                if(t[i] == j){
-                    present += 1
-                }
+        let list = {}
+        for(let i in s){
+            if(s[i] in list){
+                list[s[i]] += 1
+            } else {
+                list[s[i]] = 1
             }
-            if(present == 0){
+        }
+        for(let j in t){
+            if(t[j] in list){
+                list[t[j]] -= 1
+            } else {
+                return false
+            }
+        }
+        for(let a in list){
+            if(list[a] != 0){
                 return false
             }
         }

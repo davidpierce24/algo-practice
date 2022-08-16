@@ -11,6 +11,7 @@
         return false
     };
 
+
 // Valid Anagram
     var isAnagram = function(s, t) {
         if(s.length != t.length){
@@ -40,6 +41,7 @@
         return true
     };
 
+
 // Two Sum
     var twoSum = function(nums, target) {
         var obj = {}
@@ -54,6 +56,7 @@
         return []
     };
 
+
 // Valid Palindrome
     var isPalindrome = function(s) {
         var newstr = s.replace(/[^a-z0-9]/gi, '').toLowerCase();
@@ -63,4 +66,20 @@
             }
         }
         return true
+    };
+    
+
+// Best Time to Buy and Sell Stock
+    var maxProfit = function(prices) {
+        var profit = 0
+        var min = prices[0]
+        for(var i of prices){
+            if(i - min > profit){
+                profit = i - min
+            }
+            if(i < min){
+                min  = i
+            }
+        }
+        return profit
     };

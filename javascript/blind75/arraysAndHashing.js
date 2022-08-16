@@ -16,23 +16,24 @@
         if(s.length != t.length){
             return false
         }
-        let list = {}
-        for(let i in s){
-            if(s[i] in list){
-                list[s[i]] += 1
+        let mapS = {}
+        let mapT = {}
+        for(let i = 0, j = 0; i < s.length, j < t.length; i++, j++){
+            if(s[i] in mapS){
+                mapS[s[i]] += 1
             } else {
-                list[s[i]] = 1
+                mapS[s[i]] = 1
+            }
+            if(t[i] in mapT){
+                mapT[t[i]] += 1
+            } else {
+                mapT[t[i]] = 1
             }
         }
-        for(let j in t){
-            if(t[j] in list){
-                list[t[j]] -= 1
+        for(let i in mapS){
+            if(i in mapT && mapT[i] == mapS[i]){
+                continue
             } else {
-                return false
-            }
-        }
-        for(let a in list){
-            if(list[a] != 0){
                 return false
             }
         }
